@@ -8,7 +8,7 @@ import {
   ViewStyle,
   useColorScheme,
 } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Transak from './components/Transak';
 
 const App = () => {
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 
+    alignItems: 'center',
+  },
 });
 
 export default App;
