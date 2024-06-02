@@ -3,13 +3,11 @@ import {
   SafeAreaView,
   StatusBar,
   StyleProp,
-  StyleSheet,
-  View,
   ViewStyle,
   useColorScheme,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import Transak from './components/Transak';
+import AppNavigator from './routes/AppNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,19 +23,9 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <View style={styles.container}>
-        <Transak />
-      </View>
+      <AppNavigator />
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;
