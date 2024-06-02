@@ -4,7 +4,7 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 import {AppStackParamsList} from '../types/screens';
 
 interface ErrorScreenProps
-  extends NativeStackScreenProps<AppStackParamsList, 'HOME'> {}
+  extends NativeStackScreenProps<AppStackParamsList, 'ERROR'> {}
 
 const ErrorScreen: React.FC<ErrorScreenProps> = ({navigation}) => {
   return (

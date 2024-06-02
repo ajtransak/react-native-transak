@@ -4,7 +4,7 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 import {AppStackParamsList} from '../types/screens';
 
 interface PaymentScreenProps
-  extends NativeStackScreenProps<AppStackParamsList, 'HOME'> {}
+  extends NativeStackScreenProps<AppStackParamsList, 'PAYMENT'> {}
 
 const PaymentScreen: React.FC<PaymentScreenProps> = ({navigation}) => {
   return (

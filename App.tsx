@@ -7,7 +7,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import AppNavigator from './routes/AppNavigator';
+import AppNavigator from './src/routes/AppNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
