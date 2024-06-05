@@ -14,10 +14,16 @@ export default function AppNavigator() {
       <Stack.Navigator
         initialRouteName="HOME"
         screenOptions={{
-          headerShown: false,
+          headerTitleAlign: 'center',
         }}>
         <Stack.Screen name="HOME" component={HomeScreen} />
-        <Stack.Screen name="PAYMENT" component={PaymentScreen} />
+        <Stack.Screen
+          name="PAYMENT"
+          component={PaymentScreen}
+          options={{
+            animation: 'slide_from_right',
+          }}
+        />
         <Stack.Screen name="ERROR" component={ErrorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
