@@ -4422,10 +4422,10 @@ react-native-screens@^3.31.1, "react-native-screens@>= 3.0.0":
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native-webview@*, react-native-webview@^13.10.2:
-  version "13.10.2"
-  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-13.10.2.tgz"
-  integrity sha512-rjrTuPBtpHbI3owoyvSR+bRJqHfsdo5V3nVfU+G65CotkSLewEcGfA9cq7Qv3nzm5t0KEDIt0G/n7hQFjsXihQ==
+react-native-webview@*, react-native-webview@^13.10.3:
+  version "13.10.3"
+  resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-13.10.3.tgz"
+  integrity sha512-Gs8TvwvKvf8C6eVa3znyDn1MeYnC6tyPyBZz2D+pxys+tMn5bFUnDVdv7UpACEyoXIifsKRG7zJZu0D8OUsd2w==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
