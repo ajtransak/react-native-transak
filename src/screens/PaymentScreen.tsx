@@ -3,10 +3,11 @@ import {
   EventTypes,
   Events,
   Order,
+  TransakConfig,
   TransakWebView,
 } from '@transak/react-native-sdk';
-import React, {useState} from 'react';
-import {ColorValue, StyleSheet, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {ColorValue, StyleSheet, Text, View} from 'react-native';
 import transakConfig from '../configs/transakConfig';
 import {AppStackParamsList} from '../types/screens';
 
@@ -15,6 +16,30 @@ interface PaymentScreenProps
 
 const PaymentScreen: React.FC<PaymentScreenProps> = ({navigation}) => {
   const [borderColor, setBorderColor] = useState<ColorValue>('black');
+  const [partnerOrderId, setPartnerOrderId] = useState<string>('');
+
+  useEffect(() => {
+    const userEmail = 'ashutosh@transak.com';
+
+    function generateUniqueId() {
+      return Date.now();
+    }
+
+    function getOrderId(uId: string) {
+      const uniqueNumber = generateUniqueId();
+      const emailParts = uId.split('@');
+      const uniqueEmail = `${emailParts[0]}${uniqueNumber}@${emailParts[1]}`;
+      return uniqueEmail;
+    }
+
+    const uniqueEmail = getOrderId(userEmail);
+    setPartnerOrderId(uniqueEmail);
+  }, []);
+
+  const config = {
+    ...transakConfig,
+    partnerOrderId,
+  } as TransakConfig;
 
   const onTransakEventHandler = (event: EventTypes, data: Order) => {
     switch (event) {
@@ -53,7 +78,6 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({navigation}) => {
     container: {
       flexGrow: 1,
       flex: 1,
-      backgroundColor: 'red',
     },
     transakWebview: {
       flex: 1,
@@ -63,16 +87,27 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({navigation}) => {
       borderColor,
       borderWidth: 5,
     },
+    partnerOrderIdText: {
+      color: 'red',
+      textAlign: 'center',
+      margin: 10,
+    },
   });
 
   return (
     <View style={styles.container}>
-      <TransakWebView
-        transakConfig={transakConfig}
-        onTransakEvent={onTransakEventHandler}
-        style={styles.transakWebview}
-        containerStyle={styles.webviewContainer}
-      />
+      <Text style={styles.partnerOrderIdText}>
+        Partner Order ID: {partnerOrderId}
+      </Text>
+
+      {partnerOrderId && (
+        <TransakWebView
+          transakConfig={config}
+          onTransakEvent={onTransakEventHandler}
+          style={styles.transakWebview}
+          containerStyle={styles.webviewContainer}
+        />
+      )}
     </View>
   );
 };
