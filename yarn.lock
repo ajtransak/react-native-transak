@@ -1554,10 +1554,10 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@transak/react-native-sdk@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@transak/react-native-sdk/-/react-native-sdk-2.0.1.tgz"
-  integrity sha512-ZXJECNNE0PAqZZJ1zxHK2JEw5V1i97kplbuUXPAqkg8w4RfJ+l2pi+mkGCcCCLHzyxYnYNozAVxf+uK/tOyJrw==
+"@transak/react-native-sdk@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/@transak/react-native-sdk/-/react-native-sdk-2.0.2.tgz"
+  integrity sha512-wJ60nggja+td2GRwsZFmc1KIBEXdGbwt0/V9O2tN8Q9jNQExlEPH2RGUPrEZaZXSu7n9n1sIQ1e7yBahURCeTQ==
   dependencies:
     pako "^2.1.0"
     pusher-js "^8.3.0"
