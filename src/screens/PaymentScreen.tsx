@@ -33,6 +33,7 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({navigation}) => {
     }
 
     const uniqueEmail = getOrderId(userEmail);
+    // channel names should only include lower and uppercase letters, numbers and the following punctuation _ - = @ , . ;
     setPartnerOrderId(uniqueEmail);
   }, []);
 
